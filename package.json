@@ -18,6 +18,7 @@
   "author": "汪東陽",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/node": "^14.14.21",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",

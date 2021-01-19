@@ -1,4 +1,5 @@
-import { nodeResolve, DEFAULTS } from '@rollup/plugin-node-resolve';
+import { nodeResolve, DEFAULTS as NODE_RESOLVE_DEFAULTS } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 
@@ -8,6 +9,8 @@ import {
   browser,
   name,
 } from './package.json';
+
+const TS_EXTENSIONS = ['.ts', '.tsx'];
 
 /**
  * @param {string} str
@@ -22,14 +25,28 @@ const camalize = (str) => str
 const config = {
   input: 'src/index.ts',
   output: [
-    { file: main, format: 'cjs', exports: 'named' },
-    { file: module, format: 'es' },
     {
-      name: camalize(name), file: browser, format: 'umd', exports: 'named',
+      file: main,
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'named',
+    },
+    {
+      file: module,
+      format: 'es',
+      sourcemap: true,
+    },
+    {
+      name: camalize(name),
+      file: browser,
+      format: 'umd',
+      sourcemap: true,
+      exports: 'named',
     },
   ],
   plugins: [
-    nodeResolve({ extensions: [...DEFAULTS.extensions, '.ts'] }),
+    nodeResolve({ extensions: [...NODE_RESOLVE_DEFAULTS.extensions, ...TS_EXTENSIONS] }),
+    commonjs(),
     typescript(),
     terser(),
   ],

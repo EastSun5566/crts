@@ -1,26 +1,55 @@
-import { readFile, writeFile } from 'fs/promises';
-import { join, basename } from 'path';
+/* eslint-disable no-console */
+import { createReadStream, createWriteStream } from 'fs';
+import { join } from 'path';
 
-export async function createRollupConfig(): Promise<void> {
-  const cwd = process.cwd();
-  console.log(`Create rollup config in ${cwd}`);
-
-  const configFile = 'rollup.config.js';
-  const pkgFile = 'package.json';
-
-  const [configBuffer, pkg]: [Buffer, Record<string, any>] = await Promise.all([
-    readFile(join(__dirname, 'template', configFile)),
-    import(join(__dirname, 'template', pkgFile)),
-  ]);
-  pkg.name = basename(cwd);
-
-  await Promise.all([
-    writeFile(cwd, configBuffer),
-    writeFile(cwd, JSON.stringify(pkg, null, 2)),
-  ]);
-
-  console.log('Done. Run `npm i`');
-  console.log();
+interface CreateOptions {
+  targetDir?: string;
 }
 
-export default createRollupConfig;
+interface FileDest {
+  file: string;
+  dest: string;
+}
+
+interface RWOptions {
+  src: string;
+  dest: string;
+}
+
+const readWriteFile = ({
+  src,
+  dest,
+}: RWOptions) => new Promise((resolve, reject) => {
+  createReadStream(src)
+    .pipe(createWriteStream(dest))
+    .on('end', resolve)
+    .on('error', reject);
+});
+
+export async function createConfig({
+  targetDir = process.cwd(),
+}: CreateOptions = {}): Promise<FileDest[]> {
+  console.log(`Create rollup config in ${targetDir}`);
+
+  const targetFiles = [
+    'rollup.config.js',
+    'tsconfig.json',
+    'package.json',
+  ];
+
+  await Promise.all([
+    targetFiles.map((file) => readWriteFile({
+      src: join(__dirname, '..', 'template', file),
+      dest: join(targetDir, file),
+    })),
+  ]);
+
+  console.log('Done.');
+  console.log(`cd ${targetDir}`);
+  console.log('Run `npm i`');
+  console.log();
+
+  return targetFiles.map((file) => ({ file, dest: join(targetDir, file) }));
+}
+
+export default createConfig;
