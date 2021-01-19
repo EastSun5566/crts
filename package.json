@@ -2,10 +2,17 @@
   "name": "rpts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "bin": "dist/index.js",
+  "files": [
+    "src",
+    "dist",
+    "template"
+  ],
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "npm run build",
+    "test": "jest"
   },
   "keywords": [],
   "author": "汪東陽",
@@ -17,6 +24,7 @@
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
     "typescript": "^4.1.3"
   }
 }

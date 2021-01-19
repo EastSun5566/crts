@@ -9,6 +9,9 @@ import {
   name,
 } from './package.json';
 
+/**
+ * @param {string} str
+ */
 const camalize = (str) => str
   .toLowerCase()
   .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
