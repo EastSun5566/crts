@@ -1,7 +1,7 @@
 {
   "name": "crt",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI tool for my personal rollup + typescript lib configs setup",
   "main": "src/index.ts",
   "bin": "dist/index.js",
   "files": [
@@ -11,12 +11,22 @@
   ],
   "scripts": {
     "build": "tsc",
+    "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts src",
     "pretest": "npm run build",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "rollup",
+    "typescript",
+    "library"
+  ],
   "author": "汪東陽",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EastSun5566/crt"
+  },
+  "homepage": "https://github.com/EastSun5566/crt",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.21",
