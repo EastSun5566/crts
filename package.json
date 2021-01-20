@@ -1,6 +1,6 @@
 {
   "name": "crt",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A CLI tool for my personal rollup + typescript lib configs setup",
   "main": "src/index.ts",
   "bin": "dist/index.js",
@@ -13,7 +13,9 @@
     "build": "tsc",
     "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts src",
     "pretest": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build",
+    "release": "npm version patch && npm publish"
   },
   "keywords": [
     "rollup",
