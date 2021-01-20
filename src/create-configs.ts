@@ -29,7 +29,7 @@ const readWriteFile = ({
 export async function createConfigs({
   targetDir = process.cwd(),
 }: CreateConfigsOptions = {}): Promise<FileDest[]> {
-  console.log(`Create configs in ${targetDir}`);
+  console.log(`  Create configs in ${targetDir}`);
 
   const targetFiles = [
     'rollup.config.js',
@@ -44,9 +44,9 @@ export async function createConfigs({
     })),
   ]);
 
-  console.log('Done.');
-  console.log(`cd ${targetDir}`);
-  console.log('Run `npm i`');
+  console.log('  Done');
+  console.log(`  cd ${targetDir}`);
+  console.log('  Run `npm i`');
 
   return targetFiles.map((file) => ({ file, dest: join(targetDir, file) }));
 }
