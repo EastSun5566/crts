@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "A CLI tool for my personal rollup + typescript lib configs setup",
   "main": "src/index.ts",
-  "bin": "node dist/index.js",
+  "bin": "dist/index.js",
   "files": [
     "src",
     "dist",
