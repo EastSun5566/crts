@@ -15,7 +15,7 @@
     "pretest": "npm run build",
     "test": "jest",
     "prepublishOnly": "npm run build",
-    "release": "npm version patch && npm publish"
+    "release": "npm version patch && git push --follow-tags && npm publish"
   },
   "keywords": [
     "rollup",
