@@ -1,5 +1,5 @@
 {
-  "name": "crt",
+  "name": "crts",
   "version": "0.0.1",
   "description": "A CLI tool for my personal rollup + typescript lib configs setup",
   "main": "src/index.ts",
@@ -26,9 +26,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EastSun5566/crt"
+    "url": "https://github.com/EastSun5566/crts"
   },
-  "homepage": "https://github.com/EastSun5566/crt",
+  "homepage": "https://github.com/EastSun5566/crts",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.21",

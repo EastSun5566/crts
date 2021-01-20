@@ -1,11 +1,11 @@
 # Create Rollup TypeScript Starter
 
-[![NPM Version](https://img.shields.io/npm/v/crt.svg?style=for-the-badge)](https://www.npmjs.com/package/crt)
-[![NPM Downloads](https://img.shields.io/npm/dt/crt.svg?style=for-the-badge)](https://www.npmjs.com/package/crt)
-[![License](https://img.shields.io/github/license/EastSun5566/crt.svg?style=for-the-badge)](https://www.npmjs.com/package/crt)
+[![NPM Version](https://img.shields.io/npm/v/crts.ssvg?style=for-the-badge)](https://www.npmjs.com/package/crts)
+[![NPM Downloads](https://img.shields.io/npm/dt/crts.ssvg?style=for-the-badge)](https://www.npmjs.com/package/crts)
+[![License](https://img.shields.io/github/license/EastSun5566/crts.svg?style=for-the-badge)](https://www.npmjs.com/package/crts)
 
 ## Installation
 
 ```sh
-npx crt
+npx crts
 ```
