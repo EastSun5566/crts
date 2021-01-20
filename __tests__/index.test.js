@@ -1,10 +1,18 @@
-// const { unlink } = require('fs/promises');
-const { createConfig } = require('../dist/create-rollup-config');
+const { unlink } = require('fs/promises');
 
-it('should works', async () => {
-  const fileDestList = await createConfig({ targetDir: __dirname });
+const { createConfigs } = require('../dist/create-configs');
 
-  console.log({ fileDestList });
+/**
+ * @type {{ file: string; dest: string; }[]}
+ */
+let fileDestList = [];
 
-  expect(fileDestList).toBeTruthy();
+afterAll(async () => {
+  await Promise.all(fileDestList.map(({ dest }) => unlink(dest)));
+});
+
+it('should create', async () => {
+  fileDestList = await createConfigs({ targetDir: __dirname });
+
+  expect(fileDestList.length).toBe(3);
 });
