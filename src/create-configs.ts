@@ -39,7 +39,7 @@ export async function createConfigs({
 
   await Promise.all([
     targetFiles.map((file) => readWriteFile({
-      src: join(__dirname, '..', 'template', file),
+      src: join(__dirname, 'template', file),
       dest: join(targetDir, file),
     })),
   ]);

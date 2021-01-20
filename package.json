@@ -7,10 +7,10 @@
   "files": [
     "src",
     "dist",
-    "template"
+    "dist/template"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r template dist",
     "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts src",
     "pretest": "npm run build",
     "test": "jest",
