@@ -2,7 +2,7 @@
 import { createReadStream, createWriteStream } from 'fs';
 import { join } from 'path';
 
-interface CreateOptions {
+interface CreateConfigsOptions {
   targetDir?: string;
 }
 
@@ -26,9 +26,9 @@ const readWriteFile = ({
     .on('error', reject);
 });
 
-export async function createConfig({
+export async function createConfigs({
   targetDir = process.cwd(),
-}: CreateOptions = {}): Promise<FileDest[]> {
+}: CreateConfigsOptions = {}): Promise<FileDest[]> {
   console.log(`Create rollup config in ${targetDir}`);
 
   const targetFiles = [
@@ -52,4 +52,4 @@ export async function createConfig({
   return targetFiles.map((file) => ({ file, dest: join(targetDir, file) }));
 }
 
-export default createConfig;
+export default createConfigs;

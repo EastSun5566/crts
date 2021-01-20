@@ -1,4 +1,4 @@
-import { createConfig } from './create-rollup-config';
+import { createConfigs } from './create-configs';
 
 // eslint-disable-next-line no-console
-createConfig().catch((err: Error) => console.error(err));
+createConfigs().catch((err: Error) => console.error(err));
