@@ -40,9 +40,9 @@ export async function createConfigs({
     })),
   ]);
 
-  console.log('  Done');
-  console.log(`  cd ${targetDir}`);
-  console.log('  Run `npm i`');
+  console.log('> Done');
+  console.log(`> \`cd ${targetDir}\``);
+  console.log('> Run `npm i`');
 
   return targetFiles.map((file) => ({ file, dest: join(targetDir, file) }));
 }
