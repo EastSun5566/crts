@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { createReadStream, createWriteStream } from 'fs';
+import { readdir } from 'fs/promises';
 import { join } from 'path';
 
 interface CreateConfigsOptions {
@@ -31,12 +32,7 @@ export async function createConfigs({
 }: CreateConfigsOptions = {}): Promise<FileDest[]> {
   console.log(`  Create configs in ${targetDir}`);
 
-  const targetFiles = [
-    'rollup.config.js',
-    'tsconfig.json',
-    'package.json',
-  ];
-
+  const targetFiles = await readdir('template');
   await Promise.all([
     targetFiles.map((file) => readWriteFile({
       src: join(__dirname, 'template', file),
