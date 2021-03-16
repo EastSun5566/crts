@@ -36,7 +36,7 @@ export async function createConfigs({
   const targetFiles = await readdir('template');
   await Promise.all([
     targetFiles.map((file) => readWriteFile({
-      src: join(__dirname, 'template', file),
+      src: join('template', file),
       dest: join(targetDir, file),
     })),
   ]);
