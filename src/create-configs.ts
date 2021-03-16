@@ -31,7 +31,7 @@ const readWriteFile = ({
 export async function createConfigs({
   targetDir = process.cwd(),
 }: CreateConfigsOptions = {}): Promise<FileDest[]> {
-  console.log(`🔧 Create configs in ${targetDir}`);
+  console.log(`🔧 Create configs in \`${targetDir}\``);
 
   const targetFiles = await readdir(join(__dirname, 'template'));
   await Promise.all([
