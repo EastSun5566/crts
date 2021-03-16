@@ -8,8 +8,7 @@
   },
   "files": [
     "src",
-    "dist",
-    "dist/template"
+    "dist"
   ],
   "scripts": {
     "build": "tsc && cp -r template dist",

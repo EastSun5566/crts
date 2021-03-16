@@ -1,7 +1,7 @@
 {
-  "name": "rollup-typeScript-lib",
+  "name": "lib",
   "version": "0.0.0",
-  "description": "A Rollup TypeScript lib",
+  "description": "A lib",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",

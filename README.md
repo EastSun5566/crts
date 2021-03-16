@@ -7,5 +7,9 @@
 ## Installation
 
 ```sh
+mkdir my-lib
+
+cd my-lib
+
 npx crts
 ```
