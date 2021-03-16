@@ -1,9 +1,11 @@
 {
   "name": "crts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A CLI tool for my rollup + typescript lib configs setup",
   "main": "src/index.ts",
-  "bin": "dist/index.js",
+  "bin": {
+    "crts": "dist/index.js"
+  },
   "files": [
     "src",
     "dist",
