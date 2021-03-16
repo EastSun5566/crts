@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { createReadStream, createWriteStream } from 'fs';
+// eslint-disable-next-line import/no-unresolved
 import { readdir } from 'fs/promises';
 import { join } from 'path';
 
@@ -30,7 +31,7 @@ const readWriteFile = ({
 export async function createConfigs({
   targetDir = process.cwd(),
 }: CreateConfigsOptions = {}): Promise<FileDest[]> {
-  console.log(`  Create configs in ${targetDir}`);
+  console.log(`🔧 Create configs in ${targetDir}`);
 
   const targetFiles = await readdir('template');
   await Promise.all([
@@ -40,9 +41,8 @@ export async function createConfigs({
     })),
   ]);
 
-  console.log('> Done');
-  console.log(`> \`cd ${targetDir}\``);
-  console.log('> Run `npm i`');
+  console.log('✨ Done');
+  console.log('👉 Run `npm i`');
 
   return targetFiles.map((file) => ({ file, dest: join(targetDir, file) }));
 }
