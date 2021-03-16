@@ -33,10 +33,10 @@ export async function createConfigs({
 }: CreateConfigsOptions = {}): Promise<FileDest[]> {
   console.log(`🔧 Create configs in ${targetDir}`);
 
-  const targetFiles = await readdir('template');
+  const targetFiles = await readdir(join(__dirname, 'template'));
   await Promise.all([
     targetFiles.map((file) => readWriteFile({
-      src: join('template', file),
+      src: join(__dirname, 'template', file),
       dest: join(targetDir, file),
     })),
   ]);
