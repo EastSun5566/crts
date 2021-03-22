@@ -1,6 +1,7 @@
 import { nodeResolve, DEFAULTS as NODE_RESOLVE_DEFAULTS } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
+import filesize from 'rollup-plugin-filesize';
 import { terser } from 'rollup-plugin-terser';
 
 import {
@@ -49,6 +50,7 @@ const config = {
     commonjs(),
     typescript(),
     terser(),
+    filesize(),
   ],
 };
 
