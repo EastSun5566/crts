@@ -26,8 +26,8 @@ async function copyDir(srcDir: string, destDir: string) {
 }
 
 async function copy(src: string, dest: string) {
-  const { isDirectory } = await stat(src);
-  if (isDirectory()) {
+  const status = await stat(src);
+  if (status.isDirectory()) {
     copyDir(src, dest);
     return;
   }
@@ -38,9 +38,9 @@ async function copy(src: string, dest: string) {
 export async function createConfigs({
   root = process.cwd(),
 }: CreateConfigsOptions = {}): Promise<void> {
-  console.log(`✨ Create configs in \`${root}\``);
+  console.log(`✨ Create lib in \`${root}\``);
 
-  await copy(resolve(__dirname, 'template'), root);
+  await copy(resolve(__dirname, '..', 'template'), root);
 
   console.log('👌 Done');
   console.log('👉 Run `npm i`');
