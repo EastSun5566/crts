@@ -8,12 +8,12 @@
   },
   "files": [
     "src",
-    "dist"
+    "dist",
+    "template"
   ],
   "scripts": {
-    "build": "tsc && cp -r template dist",
+    "build": "rm -rf dist && tsc",
     "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts src",
-    "pretest": "npm run build",
     "test": "jest",
     "prepublishOnly": "npm run build",
     "release": "npm version patch && git push --follow-tags && npm publish"
@@ -33,13 +33,14 @@
   "homepage": "https://github.com/EastSun5566/crts",
   "devDependencies": {
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.21",
+    "@types/node": "^15.12.4",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
-    "jest": "^26.6.3",
+    "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
     "typescript": "^4.1.3"
   }
 }
