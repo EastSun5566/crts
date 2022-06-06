@@ -9,17 +9,15 @@
 ## 🚀 Creating
 
 ```sh
-mkdir my-lib
-
-cd my-lib
-
-npx crts
+npx crts my-lib
 ```
 
 ## 📂 Structure
 
 ```sh
-my-lib
+my-lib/
+├── src
+│   └── index.ts
 ├── package.json
 ├── rollup.config.js
 └── tsconfig.json
