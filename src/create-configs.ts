@@ -1,50 +1,49 @@
 /* eslint-disable no-console */
-import { createReadStream, createWriteStream } from 'fs';
-// eslint-disable-next-line import/no-unresolved
-import { readdir } from 'fs/promises';
+import {
+  readdir,
+  copyFile,
+  mkdir,
+  stat,
+  // eslint-disable-next-line import/no-unresolved
+} from 'fs/promises';
 import { resolve } from 'path';
 
 interface CreateConfigsOptions {
-  targetDir?: string;
+  root?: string;
 }
 
-interface FileDest {
-  file: string;
-  dest: string;
+async function copyDir(srcDir: string, destDir: string) {
+  await mkdir(destDir, { recursive: true });
+
+  const files = await readdir(srcDir);
+  return Promise.all([
+    // eslint-disable-next-line no-use-before-define
+    files.map((file) => copy(
+      resolve(srcDir, file),
+      resolve(destDir, file),
+    )),
+  ]);
 }
 
-interface RWOptions {
-  src: string;
-  dest: string;
-}
+async function copy(src: string, dest: string) {
+  const status = await stat(src);
+  if (status.isDirectory()) {
+    await copyDir(src, dest);
+    return;
+  }
 
-const readWriteFile = ({
-  src,
-  dest,
-}: RWOptions) => new Promise((res, rej) => {
-  createReadStream(src)
-    .pipe(createWriteStream(dest))
-    .on('end', res)
-    .on('error', rej);
-});
+  await copyFile(src, dest);
+}
 
 export async function createConfigs({
-  targetDir = process.cwd(),
-}: CreateConfigsOptions = {}): Promise<FileDest[]> {
-  console.log(`🔧 Create configs in \`${targetDir}\``);
+  root = process.cwd(),
+}: CreateConfigsOptions = {}): Promise<void> {
+  console.log(`✨ Create lib in \`${root}\``);
 
-  const targetFiles = await readdir(resolve(__dirname, 'template'));
-  await Promise.all([
-    targetFiles.map((file) => readWriteFile({
-      src: resolve(__dirname, 'template', file),
-      dest: resolve(targetDir, file),
-    })),
-  ]);
+  await copy(resolve(__dirname, '..', 'template'), root);
 
-  console.log('✨ Done');
+  console.log('👌 Done');
   console.log('👉 Run `npm i`');
-
-  return targetFiles.map((file) => ({ file, dest: resolve(targetDir, file) }));
 }
 
 export default createConfigs;
