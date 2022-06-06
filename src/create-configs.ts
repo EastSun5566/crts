@@ -16,7 +16,7 @@ async function copyDir(srcDir: string, destDir: string) {
   await mkdir(destDir, { recursive: true });
 
   const files = await readdir(srcDir);
-  await Promise.all([
+  return Promise.all([
     // eslint-disable-next-line no-use-before-define
     files.map((file) => copy(
       resolve(srcDir, file),
@@ -28,11 +28,11 @@ async function copyDir(srcDir: string, destDir: string) {
 async function copy(src: string, dest: string) {
   const status = await stat(src);
   if (status.isDirectory()) {
-    copyDir(src, dest);
+    await copyDir(src, dest);
     return;
   }
 
-  copyFile(src, dest);
+  await copyFile(src, dest);
 }
 
 export async function createConfigs({
