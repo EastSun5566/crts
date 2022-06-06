@@ -1,6 +1,6 @@
 {
   "name": "crts",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "🔧 A CLI tool for Setting up my rollup + typescript library",
   "main": "src/index.ts",
   "bin": {

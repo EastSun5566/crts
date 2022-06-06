@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/EastSun5566/crts/compare/v0.0.13...v0.0.14) (2022-06-06)
+
+
+### Features
+
+* add .gitignore to temp ([e39bfa9](https://github.com/EastSun5566/crts/commit/e39bfa94a75ce2b69b1e7e589570e0079851ab45))
+
 ### [0.0.13](https://github.com/EastSun5566/crts/compare/v0.0.12...v0.0.13) (2022-06-06)
 
 
