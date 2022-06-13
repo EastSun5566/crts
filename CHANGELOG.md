@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/EastSun5566/crts/compare/v0.0.15...v1.0.0) (2022-06-13)
+
+
+### Features
+
+* bump temp version ([4850b76](https://github.com/EastSun5566/crts/commit/4850b76f5c308f13df9f85a78de812a69288b9e5))
+
 ### [0.0.15](https://github.com/EastSun5566/crts/compare/v0.0.14...v0.0.15) (2022-06-06)
 
 
