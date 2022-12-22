@@ -19,7 +19,7 @@ my-lib/
 ├── src
 │   └── index.ts
 ├── package.json
-├── rollup.config.js
+├── rollup.config.ts
 └── tsconfig.json
 ```
 

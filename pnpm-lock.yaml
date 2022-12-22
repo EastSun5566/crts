@@ -9,6 +9,7 @@ specifiers:
   eslint-config-airbnb-base: ^14.2.1
   eslint-plugin-import: ^2.22.1
   jest: ^27.0.4
+  rimraf: ^3.0.2
   ts-jest: ^27.0.3
   typescript: ^4.1.3
 
@@ -21,6 +22,7 @@ devDependencies:
   eslint-config-airbnb-base: 14.2.1_hpmu7kn6tcn2vnxpfzvv33bxmy
   eslint-plugin-import: 2.26.0_ffi3uiz42rv3jyhs6cr7p7qqry
   jest: 27.5.1
+  rimraf: 3.0.2
   ts-jest: 27.1.5_tsv7cpkx6x2ll7b7a7xfhyskyi
   typescript: 4.7.3
 
