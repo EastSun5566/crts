@@ -1,47 +1,45 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { defineConfig } from 'rollup';
 import { nodeResolve, DEFAULTS as NODE_RESOLVE_DEFAULTS } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
 import filesize from 'rollup-plugin-filesize';
-import { terser } from 'rollup-plugin-terser';
 
-import {
+import pkg from './package.json' assert { type: 'json' };
+
+const {
   main,
   module,
   browser,
   name,
-} from './package.json';
+} = pkg;
 
 const TS_EXTENSIONS = ['.ts', '.tsx'];
 
-/**
- * @param {string} str
- */
-const camalize = (str) => str
+const camalize = (string: string) => string
   .toLowerCase()
-  .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
+  .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
 
-/**
- * @type {import('rollup').RollupOptions}
- */
-const config = {
+export default defineConfig({
   input: 'src/index.ts',
   output: [
     {
       file: main,
       format: 'cjs',
-      sourcemap: true,
+      // sourcemap: true,
       exports: 'named',
     },
     {
       file: module,
       format: 'es',
-      sourcemap: true,
+      // sourcemap: true,
     },
     {
       name: camalize(name),
       file: browser,
       format: 'umd',
-      sourcemap: true,
+      // sourcemap: true,
       exports: 'named',
     },
   ],
@@ -52,6 +50,4 @@ const config = {
     terser(),
     filesize(),
   ],
-};
-
-export default config;
+});

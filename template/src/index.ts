@@ -1,1 +1,5 @@
-console.log('Hello lib');
+export function greet(): string {
+  return 'Hello!';
+}
+
+export default greet;
