@@ -9,7 +9,10 @@
   "files": [
     "src",
     "dist",
-    "template"
+    "template/src",
+    "template/package.json",
+    "template/rollup.config.ts",
+    "template/tsconfig.json"
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
