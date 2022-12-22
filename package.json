@@ -12,11 +12,12 @@
     "template"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "rm -rf dist && tsc",
     "lint": "eslint --fix --ignore-path .gitignore --ext .js,.ts src",
     "test": "jest",
-    "prepublishOnly": "npm run build",
-    "release": "npx standard-version && git push --follow-tags && npm publish"
+    "prepublishOnly": "pnpm build",
+    "release": "pnpx standard-version && git push --follow-tags && pnpm publish"
   },
   "keywords": [
     "cli",
