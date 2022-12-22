@@ -9,13 +9,13 @@
 ## 🚀 Creating
 
 ```sh
-npx crts my-lib
+npx crts my-cool-lib
 ```
 
 ## 📂 Structure
 
 ```sh
-my-lib/
+my-cool-lib/
 ├── src
 │   └── index.ts
 ├── package.json
@@ -23,8 +23,10 @@ my-lib/
 └── tsconfig.json
 ```
 
-## ✨ Installation
+## ✨ Installation & Building
 
 ```sh
 npm i
+
+npm run build
 ```
