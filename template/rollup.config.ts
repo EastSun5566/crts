@@ -6,6 +6,8 @@ import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import pkg from './package.json' assert { type: 'json' };
 
 const {
@@ -46,7 +48,7 @@ export default defineConfig({
   plugins: [
     nodeResolve({ extensions: [...NODE_RESOLVE_DEFAULTS.extensions, ...TS_EXTENSIONS] }),
     commonjs(),
-    typescript(),
+    typescript({ exclude: ['rollup.config.ts'] }),
     terser(),
     filesize(),
   ],
