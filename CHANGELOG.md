@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/EastSun5566/crts/compare/v1.0.1...v1.1.0) (2022-12-22)
+
+
+### Features
+
+* upgrate template ([31977e4](https://github.com/EastSun5566/crts/commit/31977e4574230b76627e737656f08bbe9f5132b0))
+
 ### [1.0.1](https://github.com/EastSun5566/crts/compare/v1.0.0...v1.0.1) (2022-06-13)
 
 
