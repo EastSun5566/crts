@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      PNPM_CONFIG_MINIMUM_RELEASE_AGE: 0
 
     steps:
       - name: Checkout
