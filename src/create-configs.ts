@@ -16,13 +16,13 @@ async function copyDir(srcDir: string, destDir: string) {
   await mkdir(destDir, { recursive: true });
 
   const files = await readdir(srcDir);
-  return Promise.all([
+  return Promise.all(
     // eslint-disable-next-line no-use-before-define
     files.map((file) => copy(
       resolve(srcDir, file),
       resolve(destDir, file),
     )),
-  ]);
+  );
 }
 
 async function copy(src: string, dest: string) {
