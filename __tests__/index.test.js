@@ -2,6 +2,7 @@ const {
   rm,
   mkdir,
   readdir,
+  readFile,
 } = require('fs/promises');
 const { resolve } = require('path');
 const { after, test } = require('node:test');
@@ -30,4 +31,9 @@ test('should create project', async () => {
     'src',
     'tsconfig.json',
   ]);
+
+  const copiedRollupConfig = await readFile(resolve(targetDir, 'rollup.config.mjs'), 'utf8');
+  const templateRollupConfig = await readFile(resolve(__dirname, '..', 'template', 'rollup.config.mjs'), 'utf8');
+
+  assert.equal(copiedRollupConfig, templateRollupConfig);
 });
