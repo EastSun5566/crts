@@ -11,7 +11,7 @@
     "dist",
     "template/src",
     "template/package.json",
-    "template/rollup.config.mjs",
+    "template/rollup.config.ts",
     "template/tsconfig.json"
   ],
   "scripts": {
@@ -19,7 +19,7 @@
     "build": "rimraf dist && tsc",
     "lint": "oxlint --fix src __tests__ template",
     "pretest": "npm run build",
-    "test": "node --test __tests__/*.test.js",
+    "test": "node --test __tests__/*.test.ts",
     "prepublishOnly": "pnpm build",
     "release": "pnpx standard-version && git push --follow-tags && pnpm publish"
   },

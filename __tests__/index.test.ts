@@ -27,13 +27,13 @@ test('should create project', async () => {
 
   assert.deepEqual(paths.sort(), [
     'package.json',
-    'rollup.config.mjs',
+    'rollup.config.ts',
     'src',
     'tsconfig.json',
   ]);
 
-  const copiedRollupConfig = await readFile(resolve(targetDir, 'rollup.config.mjs'), 'utf8');
-  const templateRollupConfig = await readFile(resolve(__dirname, '..', 'template', 'rollup.config.mjs'), 'utf8');
+  const copiedRollupConfig = await readFile(resolve(targetDir, 'rollup.config.ts'), 'utf8');
+  const templateRollupConfig = await readFile(resolve(__dirname, '..', 'template', 'rollup.config.ts'), 'utf8');
 
   assert.equal(copiedRollupConfig, templateRollupConfig);
 });

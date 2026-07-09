@@ -1,9 +1,13 @@
+import { createRequire } from 'node:module';
+import { defineConfig } from 'rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import filesize from 'rollup-plugin-filesize';
-import pkg from './package.json' with { type: 'json' };
+
+const require = createRequire(import.meta.url);
+const pkg = require('./package.json');
 
 const {
   main,
@@ -12,11 +16,11 @@ const {
   name,
 } = pkg;
 
-const camelize = (string) => string
+const camelize = (value: string) => value
   .toLowerCase()
   .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
 
-export default {
+export default defineConfig({
   input: 'src/index.ts',
   output: [
     {
@@ -38,8 +42,8 @@ export default {
   plugins: [
     nodeResolve(),
     commonjs(),
-    typescript(),
+    typescript({ exclude: ['rollup.config.ts'] }),
     terser(),
     filesize(),
   ],
-};
+});

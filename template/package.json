@@ -16,7 +16,7 @@
     "require": "./dist/index.cjs.js"
   },
   "scripts": {
-    "build": "rimraf dist && rollup -c"
+    "build": "rimraf dist && rollup -c --configPlugin @rollup/plugin-typescript"
   },
   "keywords": [],
   "author": "",
