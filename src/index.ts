@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { resolve } from 'path';
-import { createConfigs } from './create-configs';
+import { createConfigs } from './create-configs.js';
 
 // eslint-disable-next-line no-console
 createConfigs({
