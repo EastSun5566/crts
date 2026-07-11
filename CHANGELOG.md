@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/EastSun5566/crts/compare/v1.2.0...v1.2.1) (2026-07-11)
+
+
+### Bug Fixes
+
+* downgrade ts and use mjs rollup config for template ([9a2686a](https://github.com/EastSun5566/crts/commit/9a2686a220a6ad341ae6a75ce991eb2be09e59e4))
+
 ## [1.2.0](https://github.com/EastSun5566/crts/compare/v1.1.2...v1.2.0) (2026-07-11)
 
 
