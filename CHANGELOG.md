@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/EastSun5566/crts/compare/v1.1.2...v1.2.0) (2026-07-11)
+
+
+### Features
+
+* convert main project package to ESM/module type ([ab7a576](https://github.com/EastSun5566/crts/commit/ab7a57636318a61dcb1a6718c694e15ac8e51436))
+* convert tests to ESM, expand test cases, and add trusted release workflow ([c09982e](https://github.com/EastSun5566/crts/commit/c09982e122e75efb86b0393a314f0cead2fa99d6))
+
 ### [1.1.2](https://github.com/EastSun5566/crts/compare/v1.1.1...v1.1.2) (2022-12-23)
 
 ### [1.1.1](https://github.com/EastSun5566/crts/compare/v1.1.0...v1.1.1) (2022-12-22)
