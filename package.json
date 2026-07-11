@@ -12,7 +12,7 @@
     "dist",
     "template/src",
     "template/package.json",
-    "template/rollup.config.ts",
+    "template/rollup.config.mjs",
     "template/tsconfig.json"
   ],
   "scripts": {

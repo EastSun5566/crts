@@ -24,13 +24,13 @@ test('should create project in existing directory', async () => {
 
   assert.deepEqual(paths.sort(), [
     'package.json',
-    'rollup.config.ts',
+    'rollup.config.mjs',
     'src',
     'tsconfig.json',
   ]);
 
-  const copiedRollupConfig = await readFile(resolve(targetDir, 'rollup.config.ts'), 'utf8');
-  const templateRollupConfig = await readFile(resolve(__dirname, '..', 'template', 'rollup.config.ts'), 'utf8');
+  const copiedRollupConfig = await readFile(resolve(targetDir, 'rollup.config.mjs'), 'utf8');
+  const templateRollupConfig = await readFile(resolve(__dirname, '..', 'template', 'rollup.config.mjs'), 'utf8');
 
   assert.equal(copiedRollupConfig, templateRollupConfig);
 });
@@ -45,7 +45,7 @@ test('should create project in a directory that does not exist', async () => {
 
   assert.deepEqual(paths.sort(), [
     'package.json',
-    'rollup.config.ts',
+    'rollup.config.mjs',
     'src',
     'tsconfig.json',
   ]);
@@ -80,7 +80,7 @@ createConfigs().catch(err => {
   const paths = await readdir(testCwd);
   assert.deepEqual(paths.sort(), [
     'package.json',
-    'rollup.config.ts',
+    'rollup.config.mjs',
     'src',
     'tsconfig.json',
   ]);
@@ -100,7 +100,7 @@ test('should create project when directory already exists and contains files', a
   assert.deepEqual(paths.sort(), [
     'my-existing-file.txt',
     'package.json',
-    'rollup.config.ts',
+    'rollup.config.mjs',
     'src',
     'tsconfig.json',
   ]);
@@ -119,7 +119,7 @@ test('CLI Integration: should create project via CLI command with path argument'
   const paths = await readdir(targetCliDir);
   assert.deepEqual(paths.sort(), [
     'package.json',
-    'rollup.config.ts',
+    'rollup.config.mjs',
     'src',
     'tsconfig.json',
   ]);
@@ -139,7 +139,7 @@ test('CLI Integration: should create project via CLI command in current director
   const paths = await readdir(targetCliDir);
   assert.deepEqual(paths.sort(), [
     'package.json',
-    'rollup.config.ts',
+    'rollup.config.mjs',
     'src',
     'tsconfig.json',
   ]);

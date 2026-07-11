@@ -19,7 +19,7 @@ my-cool-lib/
 ├── src
 │   └── index.ts
 ├── package.json
-├── rollup.config.ts
+├── rollup.config.mjs
 └── tsconfig.json
 ```
 

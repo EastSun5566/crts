@@ -16,7 +16,7 @@ const {
   name,
 } = pkg;
 
-const camelize = (value: string) => value
+const camelize = (value) => value
   .toLowerCase()
   .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
 
@@ -42,7 +42,7 @@ export default defineConfig({
   plugins: [
     nodeResolve(),
     commonjs(),
-    typescript({ exclude: ['rollup.config.ts'] }),
+    typescript({ exclude: ['rollup.config.mjs'] }),
     terser(),
     filesize(),
   ],
