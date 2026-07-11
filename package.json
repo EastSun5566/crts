@@ -19,10 +19,10 @@
     "preinstall": "npx only-allow pnpm",
     "build": "rimraf dist && tsc",
     "lint": "oxlint --fix src __tests__ template",
-    "pretest": "npm run build",
+    "pretest": "pnpm run build",
     "test": "node --test __tests__/*.test.ts",
     "prepublishOnly": "pnpm build",
-    "release": "pnpx standard-version && git push --follow-tags && pnpm publish"
+    "release": "pnpx standard-version && git push --follow-tags"
   },
   "keywords": [
     "cli",
